@@ -43,19 +43,19 @@
 ## 📸 Screenshots
 
 ### Home Screen
-![Home Screen](https://techwithaitelugu.github.io/chat/images/Screenshot%20(187).png)  
+![Home Screen](https://techwithai.github.io/Quick-Chat-Realtime-Chat-Video-Calling-App/Images/home.png)  
 *Friend list with online status and floating action button*
 
 ### Chat Interface
-![Chat Interface](https://techwithaitelugu.github.io/chat/images/Screenshot%20(188).png)  
+![Chat Interface](https://techwithai.github.io/Quick-Chat-Realtime-Chat-Video-Calling-App/Images/chat.png)  
 *Clean message bubbles with call options in header*
 
-### Video Call
-![Video Call](https://techwithaitelugu.github.io/chat/images/Screenshot%20(190).png)  
+### Call
+![ Call](https://techwithai.github.io/Quick-Chat-Realtime-Chat-Video-Calling-App/Images/calls.png)  
 *Full-screen calling UI with remote and local video*
 
 ### Add Friend & QR
-![Add Friend](https://techwithaitelugu.github.io/chat/images/Screenshot%20(189).png)  
+![Add Friend](https://techwithai.github.io/Quick-Chat-Realtime-Chat-Video-Calling-App/Images/profile.png)  
 *Add friends using 5-digit ID or share your QR code*
 
 ---
@@ -66,7 +66,48 @@
 - Modern browser (Chrome, Firefox, Edge)
 - Firebase account (for authentication and database)
 
-### Step 1: Clone the Repo
-```bash
-git clone https://github.com/TechWithAiTelugu/Gemini-Chat.git
-cd Gemini-Chat
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/techwithai/Quick-Chat-Realtime-Chat-Video-Calling-App.git
+   cd tournament-manager
+   ```
+
+2. Set up Firebase:
+   - Create a new project at [Firebase Console](https://console.firebase.google.com/)
+   - Enable Realtime Database
+   - Copy your Firebase configuration
+
+3. Configure Firebase:
+   - Open `index.html`
+   - Replace the Firebase configuration object with your own:
+     ```javascript
+     const firebaseConfig = {
+         apiKey: "YOUR_API_KEY",
+         authDomain: "YOUR_AUTH_DOMAIN",
+         projectId: "YOUR_PROJECT_ID",
+         storageBucket: "YOUR_STORAGE_BUCKET",
+         messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+         appId: "YOUR_APP_ID"
+     };
+     ```
+
+4. Deploy to web hosting:
+   - Use Firebase Hosting, GitHub Pages, or any static web hosting service
+   - Ensure both admin and user interfaces are accessible
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Your Name - [@techwithai](https://youtube.com/@techwitai1?si=nbFi4SpBRd-RiOuf)
+
+Project Link: [https://github.com/yourusername/tournament-manager](https://github.com/techwithai/Quick-Chat-Realtime-Chat-Video-Calling-App.git)
+
+## Acknowledgements
+
+- [Font Awesome](https://fontawesome.com/) for the amazing icons
+- [Google Fonts](https://fonts.google.com/) for the Poppins font
+- [Firebase](https://firebase.google.com/) for the backend services
