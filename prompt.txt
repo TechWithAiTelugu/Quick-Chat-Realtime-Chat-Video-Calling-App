@@ -1,0 +1,23 @@
+Create a complete, single-file real-time chat application named “QuickChat” using only HTML, CSS, and vanilla JavaScript, with Firebase as the backend. The entire application (including all styles and scripts) must be self-contained within one index.html file and designed with a mobile-first, responsive interface. The project should provide a modern, user-friendly experience that begins with a clean authentication screen where users can register or log in using their email and password, or authenticate via Google. After a successful registration, the system should automatically generate a unique public 5-digit user ID and assign a default avatar.
+
+Once authenticated, the user should be taken to the main application interface, which includes a header and a bottom navigation bar with five tabs: Home for private chats, Requests for incoming friend requests, Community for group chats, Calls for call history, and Settings for profile and application options. The current tab should be visually highlighted. From the header, a Profile popup should be accessible, displaying the user’s avatar, name, email, and 5-digit ID, with options to edit the profile or log out. Profile editing should allow users to change their display name and upload a new avatar to Firebase Storage. A popup for adding friends by entering a 5-digit ID must be provided, and the Requests tab should list all incoming friend requests with Accept and Reject buttons. Users should also be able to easily share their profile through a generated QR code using a client-side QR code library.
+
+The Home tab should show the list of friends, with real-time online status indicators, and tapping a friend should slide in a dedicated one-on-one chat view from the right. The Community tab should display a list of available public communities, allowing users to join existing communities or create their own. Entering a community should open a group chat with messages in real time, where messages sent by other users include the sender’s name. All chat messages must use a modern bubble style, aligned to the right for sent messages and to the left for received ones. In one-on-one chats, the UI should include icons for starting audio or video calls. Calls should be handled through WebRTC and include an incoming call popup that displays the caller’s name and offers Accept and Reject options, automatically marking the call as missed after 30 seconds if no response is received.
+
+During a call, a full-screen call interface must be shown. For video calls, the remote user’s video feed should fill the screen, while the local video should appear in a smaller draggable window. For audio calls, the remote user’s avatar should be shown. In-call controls must be provided to mute or unmute the microphone, enable or disable the camera (for video calls), and end the call. A Call History page in the Calls tab should display details of previous calls, including the contact’s name and avatar, date, type of call (audio or video), and status (answered, missed, or rejected).
+
+The application should use Firebase Authentication for user management, Firebase Realtime Database to store profiles, friend relations, messages, communities, and call signaling data, and Firebase Storage for uploading user avatars. All actions should provide user feedback with loading indicators or toast-style notifications. Popups must include a semi-transparent overlay and be dismissible. Finally, a Floating Action Button should be present in contextually relevant screens (e.g. “Add Friend” in Home and “Create Community” in Community) to trigger primary actions.
+
+dtabase:
+
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+client id:
+
