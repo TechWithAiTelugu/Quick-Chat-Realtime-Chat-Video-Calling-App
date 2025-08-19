@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0040)https://techwithaitelugu.github.io/chat/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
-    <title>Gemini Chat</title>
-    <link href="./Gemini Chat_files/css2" rel="stylesheet">
-    <link href="./Gemini Chat_files/icon" rel="stylesheet">
+    <title>QuickChat</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/F4b8wMcd/imagine-draw-chat-app-logo-1755450297617-removebg-preview.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- QR Code Generation Library -->
-    <script src="./Gemini Chat_files/qrcode.min.js.download"></script><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <style>
         /* --- CSS STYLING --- */
         :root {
@@ -138,6 +139,13 @@
             font-size: 1.5rem; 
             font-weight: bold; 
             color: var(--primary-color); 
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.1rem;
+            vertical-align: middle;
+            
         }
         
         header .icons .material-icons { 
@@ -855,41 +863,42 @@
 </head>
 <body>
     <!-- Authentication View -->
-    <div id="auth-wrapper" style="display: none;">
+    <div id="auth-wrapper">
         <div id="auth-container"> 
             <div id="login-form">
                 <h2>Login</h2>
                 <div class="form-group">
-                    <input type="email" id="login-email" placeholder="Email" required="">
+                    <input type="email" id="login-email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="login-password" placeholder="Password" required="">
+                    <input type="password" id="login-password" placeholder="Password" required>
                 </div>
                 <button class="btn" id="login-btn">Login</button>
                 <button class="btn btn-google" id="google-login-btn">Login with Google</button>
-                <p class="toggle-form">Don't have an account? <a href="https://techwithaitelugu.github.io/chat/#" id="show-register">Register</a></p>
+                <p class="toggle-form">Don't have an account? <a href="#" id="show-register">Register</a></p>
             </div>
             <div id="register-form" style="display: none;">
                 <h2>Register</h2>
                 <div class="form-group">
-                    <input type="text" id="register-name" placeholder="Name" required="">
+                    <input type="text" id="register-name" placeholder="Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="register-email" placeholder="Email" required="">
+                    <input type="email" id="register-email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="register-password" placeholder="Password" required="">
+                    <input type="password" id="register-password" placeholder="Password" required>
                 </div>
                 <button class="btn" id="register-btn">Register</button>
-                <p class="toggle-form">Already have an account? <a href="https://techwithaitelugu.github.io/chat/#" id="show-login">Login</a></p>
+                <p class="toggle-form">Already have an account? <a href="#" id="show-login">Login</a></p>
             </div>
         </div>
     </div>
     
     <!-- Main Application Container -->
-    <div id="main-container" style="display: flex;">
+    <div id="main-container">
         <header>
-            <div class="logo">Gemini Chat</div>
+            <div class="logo">
+                <img src="https://i.ibb.co/F4b8wMcd/imagine-draw-chat-app-logo-1755450297617-removebg-preview.png" alt="">QuickChat</div>
             <div class="icons">
                 <span class="material-icons" id="profile-icon">person</span>
                 <span class="material-icons" id="qr-icon">qr_code_scanner</span>
@@ -897,148 +906,38 @@
         </header>
         <div class="tab-content">
             <div id="home" class="tab-pane active">
-                <div id="friend-list"><div class="list-item" data-uid="snEXNCX4SmVltF5tisInzE7KQwM2">
-                                <div style="position: relative;">
-                                    <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                                    <div class="status-indicator" id="status-snEXNCX4SmVltF5tisInzE7KQwM2"></div>
-                                </div>
-                                <div class="item-info"><h4>GAME CHALLANGE</h4></div></div><div class="list-item" data-uid="yKSbu1ozMSh9yuWpp2oISof3KcC2">
-                                <div style="position: relative;">
-                                    <img src="./Gemini Chat_files/saved_resource(1)" class="avatar">
-                                    <div class="status-indicator" id="status-yKSbu1ozMSh9yuWpp2oISof3KcC2"></div>
-                                </div>
-                                <div class="item-info"><h4>Meghana Bandari</h4></div></div></div> 
+                <div id="friend-list">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <span>Loading chats...</span>
+                    </div>
+                </div> 
                 <button id="fab-add-friend" class="fab material-icons">person_add</button>
             </div>
             <div id="requests" class="tab-pane">
-                <div id="request-list"><p>No new friend requests.</p></div>
+                <div id="request-list">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <span>Loading requests...</span>
+                    </div>
+                </div>
             </div>
             <div id="community" class="tab-pane">
-                <div id="community-list"><p>No communities found. Why not create one?</p></div> 
+                <div id="community-list">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <span>Loading communities...</span>
+                    </div>
+                </div> 
                 <button id="fab-create-community" class="fab material-icons">add</button>
             </div>
             <div id="calls" class="tab-pane">
-                 <div id="call-history-list"><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                        <div class="item-info">
-                            <h4>GAME CHALLANGE</h4>
-                            <p>8/17/2025, 10:26:08 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">videocam</i>
-                            <span>rejected</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                        <div class="item-info">
-                            <h4>GAME CHALLANGE</h4>
-                            <p>8/17/2025, 10:26:04 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">videocam</i>
-                            <span>rejected</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                        <div class="item-info">
-                            <h4>GAME CHALLANGE</h4>
-                            <p>8/17/2025, 10:25:57 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">videocam</i>
-                            <span>rejected</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                        <div class="item-info">
-                            <h4>GAME CHALLANGE</h4>
-                            <p>8/17/2025, 10:25:48 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">videocam</i>
-                            <span>rejected</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                        <div class="item-info">
-                            <h4>GAME CHALLANGE</h4>
-                            <p>8/17/2025, 10:25:45 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">videocam</i>
-                            <span>rejected</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                        <div class="item-info">
-                            <h4>GAME CHALLANGE</h4>
-                            <p>8/17/2025, 10:25:42 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">call</i>
-                            <span>ended</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                        <div class="item-info">
-                            <h4>GAME CHALLANGE</h4>
-                            <p>8/17/2025, 10:25:42 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">call</i>
-                            <span>ended</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource" class="avatar">
-                        <div class="item-info">
-                            <h4>GAME CHALLANGE</h4>
-                            <p>8/17/2025, 10:25:41 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">call</i>
-                            <span>ended</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource(1)" class="avatar">
-                        <div class="item-info">
-                            <h4>Meghana Bandari</h4>
-                            <p>8/17/2025, 10:23:43 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">call</i>
-                            <span>ended</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource(1)" class="avatar">
-                        <div class="item-info">
-                            <h4>Meghana Bandari</h4>
-                            <p>8/17/2025, 10:23:43 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">call</i>
-                            <span>ended</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource(1)" class="avatar">
-                        <div class="item-info">
-                            <h4>Meghana Bandari</h4>
-                            <p>8/17/2025, 10:23:18 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">call</i>
-                            <span>ended</span>
-                        </div>
-                    </div><div class="list-item">
-                        <img src="./Gemini Chat_files/saved_resource(1)" class="avatar">
-                        <div class="item-info">
-                            <h4>Meghana Bandari</h4>
-                            <p>8/17/2025, 10:23:13 PM</p>
-                        </div>
-                        <div class="item-extra">
-                            <i class="material-icons">call</i>
-                            <span>ended</span>
-                        </div>
-                    </div></div>
+                 <div id="call-history-list">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <span>Loading call history...</span>
+                    </div>
+                </div>
             </div>
              <div id="settings" class="tab-pane">
                 <h3>Settings</h3>
@@ -1052,7 +951,7 @@
             </div>
         </div>
         <nav id="bottom-nav">
-            <div class="nav-indicator" style="left: 134.398px;"></div>
+            <div class="nav-indicator"></div>
             <div class="nav-item active" data-tab="home">
                 <i class="material-icons">chat_bubble</i>
                 <span>Home</span>
@@ -1085,10 +984,10 @@
             </div>
             <span class="material-icons popup-close">close</span>
             <div class="popup-content">
-                <img class="avatar" alt="User Avatar" id="popup-avatar" src="./Gemini Chat_files/saved_resource(2)">
-                <h3 id="popup-name">Pranay gamer</h3>
-                <p id="popup-email">pranaygamerxyt@gmail.com</p>
-                <p>ID: <span id="popup-userid">17706</span></p>
+                <img class="avatar" alt="User Avatar" id="popup-avatar">
+                <h3 id="popup-name">...</h3>
+                <p id="popup-email">...</p>
+                <p>ID: <span id="popup-userid">...</span></p>
                 <div class="profile-actions">
                     <button class="btn" id="edit-profile-btn">Edit Profile</button>
                     <button class="btn btn-logout" id="logout-btn">Logout</button>
@@ -1199,8 +1098,8 @@
     </div>
     
     <!-- Incoming Call Popup -->
-    <div id="incoming-call-popup" class="">
-        <h4 id="incoming-call-name">GAME CHALLANGE is calling</h4>
+    <div id="incoming-call-popup">
+        <h4 id="incoming-call-name">... is calling</h4>
         <div class="incoming-call-actions">
             <button class="btn btn-accept" id="accept-call-btn">Accept</button>
             <button class="btn btn-reject" id="reject-call-btn">Reject</button>
@@ -1208,10 +1107,10 @@
     </div>
     
     <!-- Firebase SDKs -->
-    <script src="./Gemini Chat_files/firebase-app-compat.js.download"></script>
-    <script src="./Gemini Chat_files/firebase-auth-compat.js.download"></script>
-    <script src="./Gemini Chat_files/firebase-database-compat.js.download"></script>
-    <script src="./Gemini Chat_files/firebase-storage-compat.js.download"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
 
     <script>
         // --- FIREBASE INITIALIZATION ---
@@ -1990,7 +1889,5 @@
             });
         }
     </script>
-
-
-
-                </body></html>
+</body>
+</html>
