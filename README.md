@@ -43,19 +43,19 @@
 ## 📸 Screenshots
 
 ### Home Screen
-![Home Screen](https://techwithai.github.io/Quick-Chat-Realtime-Chat-Video-Calling-App/Images/home.png)  
+![Home Screen](https://techwithai.github.io/QuickChat/Images/home.png)  
 *Friend list with online status and floating action button*
 
 ### Chat Interface
-![Chat Interface](https://techwithai.github.io/Quick-Chat-Realtime-Chat-Video-Calling-App/Images/chat.png)  
+![Chat Interface](https://techwithai.github.io/QuickChat/Images/chat.png)  
 *Clean message bubbles with call options in header*
 
 ### Call
-![ Call](https://techwithai.github.io/Quick-Chat-Realtime-Chat-Video-Calling-App/Images/calls.png)  
+![ Call](https://techwithai.github.io/QuickChat/Images/calls.png)  
 *Full-screen calling UI with remote and local video*
 
 ### Add Friend & QR
-![Add Friend](https://techwithai.github.io/Quick-Chat-Realtime-Chat-Video-Calling-App/Images/profile.png)  
+![Add Friend](https://techwithai.github.io/QuickChat/Images/profile.png)  
 *Add friends using 5-digit ID or share your QR code*
 
 ---
@@ -69,7 +69,7 @@
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/techwithai/Quick-Chat-Realtime-Chat-Video-Calling-App.git
+   git clone https://github.com/techwithai/QuickChat.git
    cd tournament-manager
    ```
 
@@ -104,7 +104,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Your Name - [@techwithai](https://youtube.com/@techwitai1?si=nbFi4SpBRd-RiOuf)
 
-Project Link: [https://github.com/yourusername/tournament-manager](https://github.com/techwithai/Quick-Chat-Realtime-Chat-Video-Calling-App.git)
+Project Link: [https://github.com/yourusername/tournament-manager](https://github.com/techwithai/QuickChat.git)
 
 ## Acknowledgements
 
